@@ -26,8 +26,7 @@
   e=(!e||e.length===0?"$default_instance":e).toLowerCase()
   ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
   ;e.amplitude=n})(window,document);
-	
-	amplitude.getInstance().setUserId('anonymous');
+
   amplitude.getInstance().init("0b33179a82487dcb663a5b4f793b3f90");
 
 </script>
@@ -160,6 +159,9 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				amplitude.getInstance().setUserId(null);
+			</script>
 
 	</body>
 </html>
