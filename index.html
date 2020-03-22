@@ -142,8 +142,7 @@
 							<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
 						</div>
 						<ul class="actions">
-							<li><input value="Send Message" class="button alt" type="submit"
-													onclick="amplitude.getInstance().logEvent('send email');"></li>
+							<li><input id="sendForm" value="Send Message" class="button alt" type="submit"></li>
 						</ul>
 					</form>
 
@@ -160,7 +159,10 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				amplitude.getInstance().setUserId(null);
+			$( "#sendForm" ).submit(function( event ) {
+				alert( "Handler for .submit() called." );
+				event.preventDefault();
+			});
 			</script>
 
 	</body>
