@@ -155,8 +155,23 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery1.min.js"></script>
+			<script>
+			amplitude.getInstance().setUserId(null);
+			console.log(amplitude.getInstance().options.userId);
+			$("#sendForm").click(function(event) {
+				var eventProperties = {
+				 'name': $('#name').val(),
+				 'email': $('#email').val(),
+				 'message': $('#message').val(),
+				 'value': $('#message').val().length
+				};
+				console.console.log( "Handler for .submit() called.");
+				amplitude.getInstance().logEvent('submit correct form', eventProperties);
+				event.preventDefault();
+			});
+			</script>
 			<script src="assets/js/skel.min.js"></script>
-			<!-- script src="assets/js/util.js"></script>-->
+			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
 	</body>
