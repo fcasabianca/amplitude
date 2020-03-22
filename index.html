@@ -42,9 +42,11 @@
 				<div class="inner">
 					<a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>
 					<nav id="nav">
-						<a href="index.html" onmouseover="amplitude.getInstance().logEvent('hover_top_bar');">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="index.html" onmouseover="amplitude.getInstance().logEvent('hover_index');">Home</a>
+						<a href="generic.html" onmouseover="amplitude.getInstance().logEvent('hover_generic');"
+																	onclick="amplitude.getInstance().logEvent('transition_generic');">Generic</a>
+						<a href="elements.html" onmouseover="amplitude.getInstance().logEvent('hover_elements');"
+																	onclick="amplitude.getInstance().logEvent('transition_elements');">Elements</a>
 					</nav>
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
@@ -155,12 +157,6 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-			$(".inner").scroll(function() {
-				var id = $(this).parent().attr('id');
-				amplitude.getInstance().logEvent('hover_' + id);
-			});
-			</script>
 
 	</body>
 </html>
