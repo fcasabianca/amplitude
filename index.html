@@ -52,7 +52,7 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<div class="inner" onscroll="alert("Hola")">
+				<div class="inner">
 					<header>
 						<h1>Welcome to Projection</h1>
 					</header>
@@ -88,7 +88,7 @@
 
 		<!-- Three -->
 			<section id="three">
-				<div class="inner" class="wrapper align-center" onscroll="amplitude.getInstance().logEvent('scroll_three');">
+				<div class="inner" class="wrapper align-center">
 					<div class="flex flex-2">
 						<article>
 							<div class="image round">
@@ -120,7 +120,7 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<div class="inner" onscroll="amplitude.getInstance().logEvent('scroll_footer');">
+				<div class="inner">
 
 					<h3>Get in touch</h3>
 
@@ -155,6 +155,12 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			$(".inner").scroll(function() {
+				var id = $(this).parent().attr('id');
+				amplitude.getInstance().logEvent('hover_' + id);
+			});
+			</script>
 
 	</body>
 </html>
